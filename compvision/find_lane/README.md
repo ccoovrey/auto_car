@@ -45,8 +45,7 @@ represented in polar coordinates (rho and theta).
 
 ### Extrapolating Raw Hough Lines
 It would be good to extend these raw hough lines into lines that represent the drive
-lane for the vehicle. As one can see above, we have a set of right and left lane 
-lines in the image. From the slope of these lines, one can deduce if it is a right
+lane for the vehicle. From the slope of these lines, one can deduce if it is a right
 or left lane line. We can fit a line to these set of raw hough lines for each of 
 the left and right lanes. We can also use a running average of these fitted lines
 and use this to extend the right and left lane lines:
@@ -58,23 +57,19 @@ blending:
 
 ![Final Image][final_image]
 
-[start_video]: ./test_videos/solidWhiteRight.mp4 
-[final_video]: ./test_videos/final_solidWhiteRight.mp4 
 [prob_video]: ./test_videos/final_solidYellowLeft.mp4 
 
 ## Video Image
-An example of video transformation can be seen in the following videos:
-
-
-![Start Video][start_video]
-
-![Final Video][final_video]
+An example of video transformation can be seen in the following videos in the directory
+"test_videos":
+* initial video: solidWhiteRight.mp4
+* transformed video: final_solidWhiteRight.mp4
 
 ## Potential shortcoming of pipeline
 One can see in this transformed video image that the lane line
 wobbles in some frames:
-
-![Problem Video][prob_video]
+* initial video: solidYellowLeft.mp4
+* transformed video: final_solidYellowLeft.mp4
 
 One possible improvement would be to monitor the change in the slope
 of each of the lane lines and when this change of slope breaks a certain threshold
