@@ -1,4 +1,4 @@
-#**Finding Lane Lines on the Road** 
+# **Finding Lane Lines on the Road** 
 When we drive a car, we use the lane lines of the road to guide us on our journey. These
 lines are a constant reference for the driver to stay in the lane of the highway. These
 lane lines can also be used as a reference for autonomous vehicles. In this project
@@ -16,7 +16,6 @@ algorithm does the following:
   the image
 
 [start_image]: ./test_images/solidWhiteRight.jpg 
-[gray_image]: ./test_images/solidWhiteRight.jpg "Grayscale"
 [canny_image]: ./test_images/canny_solidWhiteRight.jpg 
 [extrap_lines]: ./test_images/extrap_lines_solidWhiteRight.jpg 
 [final_image]: ./test_images/final_solidWhiteRight.jpg 
@@ -26,11 +25,6 @@ The lane line detection algorithm can be seen here as an image is transformed. W
 with the color image of drivers view:
 
 ![starting image][start_image]
-
-### Grayscale transform
-We then transform this image into grayscale:
-
-![Gray Image][gray_image]
 
 ### Canny edge detection
 John Canny developed this algorithm in 1986. The goal of the algorithm is to identify
