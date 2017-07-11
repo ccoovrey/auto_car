@@ -21,6 +21,8 @@ The goals / steps of this project are the following:
 [timage3]: ./german_images/give_way.jpg "Traffic Sign: yield"
 [timage4]: ./german_images/kinder.jpg "Traffic Sign: childrens crossing"
 [timage5]: ./german_images/stop.jpg "Traffic Sign: stop sign"
+[eimage1]: ./other_images/beware_ice_snow.jpg "Beware Ice/Snow"
+[eimage2]: ./other_images/no_entry.jpg "No Entry"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -72,7 +74,7 @@ To get a more generalized model, I also looked at applying different transformat
 * rotation
 
 I experimented using the final model architecture and these different preprocess techniques on the images.
-The best combinations I found was to apply a random transformation of each image and using a contrast
+The best combinations I found was to apply a random transformation of each image and use a contrast
 normalization conversion. For example, here is an original image:
 
 ![orginal][image4]
@@ -112,12 +114,10 @@ consistent value. Experimenting with different hyperparameters I found the best 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+* validation set accuracy of stabilizing between 96.5 and 97.5% 
+* test set accuracy of 96.3%
 
-I used the LeNet architecture. I wanted to start the simplest model possible, before moving to architectures that were
-more complex. I obtained very good accuracy using the test set as evidence.
+I used the LeNet architecture, with dropouts in pooling and RELUs. I wanted to start with the simplest model possible, before moving to architectures that were more complex. I obtained very good accuracy of 96.3% using the test set as evidence. 
 
 ### Test a Model on New Images
 
@@ -128,36 +128,35 @@ Here are five German traffic signs that I found on the web:
 ![60 km/h][timage1] ![wild animal crossing][timage2] ![yield][timage3] 
 ![childrens crossing][timage4] ![stop][timage5]
 
-The first image might be difficult to classify because ...
-
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
 Here are the results of the prediction:
 
 | Image			| Prediction	        					
 |:---------------------:|:---------------------------------------------:
-| 60 km/h      		| Stop sign   						
-| Wild Animal Crossing 	| U-turn 									
+| 60 km/h      		| 60 km/h   						
+| Wild Animal Crossing 	| Wild Animal Crossing 									
 | Yield                 | Yield											
-| Childrens Crossing	| Childrens Crossing					 				
-| Stop			| Stop      							
+| Childrens Crossing	| Beware of Ice and Snow					 				
+| Stop			| No Entry      							
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 3 of the 5 traffic signs, which gives an accuracy of 60%. Both signs that were missclassified could
+be because of word classification embedded in the signs. The childrens crossing sign in the example did have a name under the sign (Ice and Snow signs have different words underneath the sign such as ICE or SNOW). The
+stop sign had the word STOP (No Entry is a long white stripe in the sign). One can see examples of these type of signs below: 
 
-#### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+![Beware Ice/Snow][eimage1] ![No Entry][eimage2]
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+This gives a compelling need to have tagged understandings of words
+embedded in images for better classification of traffic signs. 
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+#### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. 
 
-| Probability         	| Prediction	        					
-|:---------------------:|:---------------------------------------------:| 
-| .60         		| Stop sign   						
-| .20     		| U-turn 							
-| .05			| Yield									
-| .04	      		| Bumpy Road					 				
-| .01		        | Slippery Road      							
+The code for making predictions on my final model is located in the 25th cell of the Ipython notebook. The top 5 softmax probabilities for 
+each image were:
 
-
-
+mage 0, Top 5 Probabilities: [ 1.  0.  0.  0.  0.]
+Image 1, Top 5 Probabilities: [ 1.  0.  0.  0.  0.]
+Image 2, Top 5 Probabilities: [ 1.  0.  0.  0.  0.]
+Image 3, Top 5 Probabilities: [ 1.  0.  0.  0.  0.]
+Image 4, Top 5 Probabilities: [ 1.  0.  0.  0.  0.]
