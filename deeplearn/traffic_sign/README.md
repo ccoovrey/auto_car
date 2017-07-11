@@ -14,8 +14,7 @@ The goals / steps of this project are the following:
 [image1]: ./examples/construction.png "Construction Sign"
 [image2]: ./examples/training_labels.png "Training Labels"
 [image3]: ./examples/train_test.png "Train/Test Distribution"
-[image4]: ./examples/original.png "Orginal Image"
-[image5]: ./examples/contrast.png "Contrast Image"
+[image4]: ./examples/image.png "Pre-Process Images"
 [timage1]: ./german_images/60.jpg "Traffic Sign: 60 km/h"
 [timage2]: ./german_images/wild_animals "Traffic Sign: wild animal crossing"
 [timage3]: ./german_images/give_way.jpg "Traffic Sign: yield"
@@ -75,34 +74,33 @@ To get a more generalized model, I also looked at applying different transformat
 
 I experimented using the final model architecture and these different preprocess techniques on the images.
 The best combinations I found was to apply a random transformation of each image and use a contrast
-normalization conversion. For example, here is an original image:
+normalization conversion. For example, here is an original image with various pre-processing 
+techniques that I used:
 
 ![orginal][image4]
-
-Converted by contrasted normalization:
-
-![contrast][image5]
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
 My final model was very close to a LeNet Model and consisted of the following layers:
-| Layer                         |     Description
-|:-----------------------------:|:-----------------------------------------------:
-| Input                         | 32x32x3 RGB Image
-| Convolution                   | 1x1 stride, same padding, outputs 32x32x32
-| RELU                          | 
-| Max Pooling with dropout      | 2x2 stride, outputs 16x16x32
-| Convolution                   | 1x1 stride, same padding, outputs 16x16x128
-| RELU                          |
-| Max Pooling with dropout      | 4x4 stride, same padding, outputs 4x4x128
-| Flatten                       | outputs 2048
-| Fully Connected               | outputs 128
-| RELU with dropout             |
-| Fully Connected               | outputs 128
-| RELU with dropout             | 
-| Fully Connected               | outputs class labels
-										
 
+```
+| Layer                         |     Description                                |
+|:-----------------------------:|:-----------------------------------------------:
+| Input                         | 32x32x3 RGB Image                              |
+| Convolution                   | 1x1 stride, same padding, outputs 32x32x32     |
+| RELU                          |                                                |
+| Max Pooling with dropout      | 2x2 stride, outputs 16x16x32                   |
+| Convolution                   | 1x1 stride, same padding, outputs 16x16x128    |
+| RELU                          |                                                |
+| Max Pooling with dropout      | 4x4 stride, same padding, outputs 4x4x128      |
+| Flatten                       | outputs 2048                                   |
+| Fully Connected               | outputs 128                                    |
+| RELU with dropout             |                                                |
+| Fully Connected               | outputs 128                                    |
+| RELU with dropout             |                                                |
+| Fully Connected               | outputs class labels                           |
+```
+				
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
 To train the model, I used a batch size of 64 and used 30 epochs, where the accuracy stablized to a 
