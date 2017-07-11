@@ -16,7 +16,7 @@ The goals / steps of this project are the following:
 [image3]: ./examples/train_test.png "Train/Test Distribution"
 [image4]: ./examples/image.png "Pre-Process Images"
 [timage1]: ./german_images/60.jpg "Traffic Sign: 60 km/h"
-[timage2]: ./german_images/wild_animals "Traffic Sign: wild animal crossing"
+[timage2]: ./german_images/wild_animals.jpg "Traffic Sign: wild animal crossing"
 [timage3]: ./german_images/give_way.jpg "Traffic Sign: yield"
 [timage4]: ./german_images/kinder.jpg "Traffic Sign: childrens crossing"
 [timage5]: ./german_images/stop.jpg "Traffic Sign: stop sign"
@@ -92,7 +92,7 @@ My final model was very close to a LeNet Model and consisted of the following la
 | Max Pooling with dropout      | 2x2 stride, outputs 16x16x32                   |
 | Convolution                   | 1x1 stride, same padding, outputs 16x16x128    |
 | RELU                          |                                                |
-| Max Pooling with dropout      | 4x4 stride, same padding, outputs 4x4x128      |
+| Max Pooling                   | 4x4 stride, same padding, outputs 4x4x128      |
 | Flatten                       | outputs 2048                                   |
 | Fully Connected               | outputs 128                                    |
 | RELU with dropout             |                                                |
@@ -152,9 +152,10 @@ embedded in images for better classification of traffic signs.
 
 The code for making predictions on my final model is located in the 25th cell of the Ipython notebook. The top 5 softmax probabilities for 
 each image were:
-
-mage 0, Top 5 Probabilities: [ 1.  0.  0.  0.  0.]
+```
+Image 0, Top 5 Probabilities: [ 1.  0.  0.  0.  0.]
 Image 1, Top 5 Probabilities: [ 1.  0.  0.  0.  0.]
 Image 2, Top 5 Probabilities: [ 1.  0.  0.  0.  0.]
 Image 3, Top 5 Probabilities: [ 1.  0.  0.  0.  0.]
 Image 4, Top 5 Probabilities: [ 1.  0.  0.  0.  0.]
+```
