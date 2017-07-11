@@ -16,11 +16,11 @@ The goals / steps of this project are the following:
 [image3]: ./examples/train_test.png "Train/Test Distribution"
 [image4]: ./examples/original.png "Orginal Image"
 [image5]: ./examples/contrast.png "Contrast Image"
-[timage1]: ./german_images/60.jpg "Traffic Sign 1"
-[timage2]: ./german_images/exclamation.jpg "Traffic Sign 2"
-[timage3]: ./german_images/give_way.jpg "Traffic Sign 3"
-[timage4]: ./german_images/kinder.jpg "Traffic Sign 4"
-[timage5]: ./german_images/stop.jpg "Traffic Sign 5"
+[timage1]: ./german_images/60.jpg "Traffic Sign: 60 km/h"
+[timage2]: ./german_images/wild_animals "Traffic Sign: wild animal crossing"
+[timage3]: ./german_images/give_way.jpg "Traffic Sign: yield"
+[timage4]: ./german_images/kinder.jpg "Traffic Sign: childrens crossing"
+[timage5]: ./german_images/stop.jpg "Traffic Sign: stop sign"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -125,8 +125,8 @@ more complex. I obtained very good accuracy using the test set as evidence.
 
 Here are five German traffic signs that I found on the web:
 
-![60 km/h][timage1] ![exclamation][timage2] ![yield][timage3] 
-![kinder][timage4] ![stop][timage5]
+![60 km/h][timage1] ![wild animal crossing][timage2] ![yield][timage3] 
+![childrens crossing][timage4] ![stop][timage5]
 
 The first image might be difficult to classify because ...
 
@@ -137,8 +137,8 @@ Here are the results of the prediction:
 | Image			| Prediction	        					
 |:---------------------:|:---------------------------------------------:
 | 60 km/h      		| Stop sign   						
-| Exclamation   	| U-turn 									
-| Yield			| Yield											
+| Wild Animal Crossing 	| U-turn 									
+| Yield                 | Yield											
 | Childrens Crossing	| Childrens Crossing					 				
 | Stop			| Stop      							
 
