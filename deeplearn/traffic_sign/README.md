@@ -105,8 +105,6 @@ My final model was very close to a LeNet Model and consisted of the following la
 
 To train the model, I used a batch size of 64 and used 30 epochs, where the accuracy stablized to a 
 consistent value. Experimenting with different hyperparameters I found the best model to have:
-* mu = 0
-* sigma = 0.1
 * learning rate = 0.0007
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
@@ -115,8 +113,14 @@ My final model results were:
 * validation set accuracy of stabilizing between 96.5 and 97.5% 
 * test set accuracy of 96.3%
 
-I used the LeNet architecture, with dropouts in pooling and RELUs. I wanted to start with the simplest model possible, before moving to architectures that were more complex. I obtained very good accuracy of 96.3% using the test set as evidence. 
-
+I first started out with the LeNet-5 architecture shown in the convolutional neural network module. I wanted to start with the simplest model possible, before
+moving to achitecutures that were more complex. Initially this architecture did not give good accuracy, so I next focused on adding dropouts in the layer 1 and
+2 pooling and RELU activation layers 3 and 4. I found the best combination for adding dropouts was in the first pooling layer and layers 3 and 4 RELUs. I started with
+a learning rate of 0.001, to improve accuracy I kept on decreasing the learning rate to finally using 0.0007. Since this is my first classifier in deep learning I
+used the LeNet-5 architecture as a design choice, because I wanted to see if I could get the desired accuracy above 93% with this basic model. The next model
+architecture I was going to try was the ZF Net 7 layer model if LeNet-5 couldn't reach the threshold. By adding dropouts and tuning the learning rate I got above 
+the 93% threshold so the LeNet-5 model proved good for the project. 
+ 
 ### Test a Model on New Images
 
 #### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
@@ -125,6 +129,9 @@ Here are five German traffic signs that I found on the web:
 
 ![60 km/h][timage1] ![wild animal crossing][timage2] ![yield][timage3] 
 ![childrens crossing][timage4] ![stop][timage5]
+
+Some qualities that might cause my model to misclassify for these German traffic signs I found on the web, could be the writing below
+the childrens crossing and the brightness and contrast of the signs.
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -139,9 +146,9 @@ Here are the results of the prediction:
 | Stop			| No Entry      							
 
 
-The model was able to correctly guess 3 of the 5 traffic signs, which gives an accuracy of 60%. Both signs that were missclassified could
-be because of word classification embedded in the signs. The childrens crossing sign in the example did have a name under the sign (Ice and Snow signs have different words underneath the sign such as ICE or SNOW). The
-stop sign had the word STOP (No Entry is a long white stripe in the sign). One can see examples of these type of signs below: 
+The model was able to correctly guess 3 of the 5 traffic signs, which gives an accuracy of 60%. Given that the accuracy of the captured images is
+60% while it was 96.3% on the testing set, seems to point to the conclusion that the model is overfitting. Both signs that were missclassified could
+be because of word classification embedded in the signs. The childrens crossing sign in the example did have a name under the sign (Ice and Snow signs have different words underneath the sign such as ICE or SNOW). The stop sign had the word STOP (No Entry is a long white stripe in the sign). One can see examples of these type of signs below: 
 
 ![Beware Ice/Snow][eimage1] ![No Entry][eimage2]
 
