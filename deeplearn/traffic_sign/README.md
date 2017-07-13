@@ -114,7 +114,7 @@ My final model results were:
 * test set accuracy of 96.3%
 
 I first started out with the LeNet-5 architecture shown in the convolutional neural network module. I wanted to start with the simplest model possible, before
-moving to achitecutures that were more complex. Initially this architecture did not give good accuracy, so I next focused on adding dropouts in the layer 1 and
+moving to achitectures that were more complex. Initially this architecture did not give good accuracy, so I next focused on adding dropouts in the layer 1 and
 2 pooling and RELU activation layers 3 and 4. I found the best combination for adding dropouts was in the first pooling layer and layers 3 and 4 RELUs. I started with
 a learning rate of 0.001, to improve accuracy I kept on decreasing the learning rate to finally using 0.0007. Since this is my first classifier in deep learning I
 used the LeNet-5 architecture as a design choice, because I wanted to see if I could get the desired accuracy above 93% with this basic model. The next model
