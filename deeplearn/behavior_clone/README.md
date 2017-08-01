@@ -12,11 +12,10 @@ navigate a car in a simulated track.
 The project consists of the following:
 * model.py: script to train the model.
 * drive.py: script to drive the car.
-* model.json: model architecture.
+* /experiments: folder showing experiments iterating thru model and data design.
 * model.h5: model neural network weights.
-* setup.py: script to load, process and assign weights to training data.
-* dataprocess.py: script for processing images
-* behavior_clone.ipynb: ipython notebook showing execution.
+* behavior_clone.ipynb: ipython notebook showing execution and data processing.
+* final_model.mp4: video showing autonomous driving using final model.
 
 [//]: # (Image References)
 
@@ -36,12 +35,10 @@ The project consists of the following:
 This project contains the following files:
 * model.py: script to train the model.
 * drive.py: script to drive the car.
-* model.json: model architecture.
+* /experiments: folder showing experiments iterating thru model and data design.
 * model.h5: model neural network weights.
-* setup.py: script to load, process and assign weights to training data.
-* dataprocess.py: script for processing images
 * behavior_clone.ipynb: ipython notebook showing execution.
-* video.mp4: video recording of car driving autonomously for one lap around the simulated track.
+* final_model.mp4: video showing autonomous driving using final model.
 
 #### 2. Submission includes functional code
 
