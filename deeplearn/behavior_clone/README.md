@@ -119,7 +119,7 @@ In the final model to capture good driving behavior, I first recorded two laps o
 
 ![alt text][image2]
 
-I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to .... These images show what a recovery looks like starting from ... :
+I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to recover if going close to the side of the road. These images show what a recovery looks:
 
 ![alt text][image3]
 ![alt text][image4]
